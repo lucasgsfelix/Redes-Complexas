@@ -3,6 +3,7 @@ import random
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
 def addEdges(graph, probability):
 
@@ -39,6 +40,21 @@ def calcDistribution(graph):
 	degreeValues = np.unique(degreeValues) ### removing repeated values
 
 	return degreeValues, numberOfNodes
+
+
+def poissonDistribution():
+	''' Calculates the poisson distribution giver a number of samples '''
+
+	t = np.arange(0, 20, 0.1)
+	d = np.exp(-5)*np.power(5, t)/math.factorial(t)
+	plt.plot(t, d, 'bs')
+	plt.show()
+
+
+	return d
+
+def binomialDistribution():
+	pass
 
 def graphPlot(graph):
 
